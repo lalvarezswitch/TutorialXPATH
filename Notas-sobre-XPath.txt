@@ -1,0 +1,24 @@
+****Uso de Xpath***
+1er caso
+http://newtours.demoaut.com/mercuryunderconst.php
+Escribir en consola de navegador: 
+$x("//*[contains(string(),'This')]") -- te encuentra todos los elementos que contengan el string This.
+$x("//font[contains(string(),'This')]") -- te encuentra los elementos que contengan el string This que tienen la etiqueta font.
+$x("//b/font[contains(string(),'This')]") -- te encuentra los elementos que contengan el string This que estan dentro la etiqueta font dentro de la etiqueta b 
+
+2do caso
+http://newtours.demoaut.com/mercuryregister.php
+Escribir en consola de navegador:
+$x("//td[@align = 'right']") -- me encuentra todos los elementos de tipo td cuya propiedad align tiene valor right.
+$x("//td[@align = 'right']/font") -- me encuentra todos los elementos de tipo td cuya propiedad align tiene valor right y están dentro de una etiqueta font.
+$x("//td[@align = 'right']/font/b") -- me encuentra todos los elementos de tipo td cuya propiedad align tiene valor right y están dentro de una etiqueta front que contiene una etiqueta b.
+$x("//td[@align = 'right']/font/b[contains(string(),'First')]") -- me encuentra todos los elementos de tipo td cuya propiedad align tiene valor right y están dentro de una etiqueta font, que contiene una etiqueta b con un string con la palabra First.
+
+3er caso
+http://newtours.demoaut.com/mercurywelcome.php
+$x("//input[@name='userName']") -- me encuentra el elemento de tipo input cuya propiedad name tiene valor userName.
+$x("//td[@width = '67']") -- me encuentra el elemento con la etiqueta td que tiene en la propiedad width el valor de 67
+$x("//td[@width = '67']/following-sibling::*") -- me encuentra todos los elementos hermanos-siguientes(siblings), del elemento con la etiqueta td que tiene en la propiedad width el valor de 67.
+$x("//td[@width = '67']/following-sibling::td") -- me encuentra todos los elementos td hermanos-siguientes(siblings), del elemento con la etiqueta td que tiene en la propiedad width el valor de 67.
+$x("//td[@width = '67']/following-sibling::td[@width='73']") -- me encuentra todos los elementos td que tienen el width con valor 73, y son hermanos-siguientes(siblings) del elemento con la etiqueta td que tiene en la propiedad width el valor de 67.
+$x("//td[@width = '67']/following-sibling::td[@width='73']/a") -- me encuentra todos los elementos td que tienen el width con valor 73 y se encuentra dentro de una etiqueta a, y son hermanos-siguientes(siblings) del elemento con la etiqueta td que tiene en la propiedad width el valor de 67.
